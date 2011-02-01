@@ -1,0 +1,14 @@
+{
+  "label": "title",
+  "identifier": "id",
+  "items": [
+  <% @pages.each_with_index do |page, index| %>
+    <%= if index > 0 then "," end %>{
+    "title": "<%= page.title %>",
+    "id"   : "<%= page.id %>"
+    }
+  <% end %>
+
+  ]
+
+}
