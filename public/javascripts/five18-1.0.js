@@ -25,15 +25,14 @@ var FormsContainer = function () {
 
 	function loadForm(form, container) {
 		dojo.xhrGet({
-			url: five18.dbpath + form,
+			url: five18.dbpath + form + "/new",
 			formname: form,
 			handleAs: 'text',
 			container: container,
 			formsObject: that,
 			load: function (data, xhr) {
-				var fixed = xhr.args.formsObject.fixForm(data);
-				xhr.args.container.attr('content', fixed);
-				xhr.args.formsObject.saveToCache(xhr.args.formname, fixed);
+				xhr.args.container.attr('content', data);
+				xhr.args.formsObject.saveToCache(xhr.args.formname, data);
 			},
 			error: function (error) {
 				container.innerHTML = error;
@@ -56,14 +55,6 @@ var FormsContainer = function () {
 		cached[formname] = data;
 	};
 	
-	this.fixForm = function (data) {
-		var endPos = 0;
-		while (data.indexOf('</form', endPos+1)>0) {
-			endPos = data.indexOf('</form', endPos+1);
-		}
-		var tmp = data.substring(data.indexOf('<form'), endPos);
-		return tmp.replace(/<form/g, '<form dojoType="dijit.form.Form"');
-	};
 };
 
 five18.forms = new FormsContainer();
@@ -78,21 +69,7 @@ five18.editDocument = function (unid, editIn) {
 		container: editIn,
 		handleAs: 'text',
 		load: function (data, xhr) {
-			var fixed = five18.forms.fixForm(data);
-			xhr.args.container.attr('content', fixed);
-			var titel = '';
-			if (data.indexOf('<title>') > 0) {
-				titel = data.substring(data.indexOf('<title>')+7,data.indexOf('</title>'));
-			}	
-			if (editIn instanceof dijit.Dialog) {		
-				if ((!editIn.title || (editIn.title == '')) && (titel != '')) {
-					editIn.attr('title', titel);
-				}				
-			} else {
-				if (!editIn.label && (titel != '')) {
-					editIn.attr('title', titel);
-				}
-			}
+			xhr.args.container.attr('content', data);
 			if (xhr.args.container.initHandler) {
 				xhr.args.container.initHandler(xhr.args.container);
 			}
@@ -108,7 +85,7 @@ five18.saveDocument = function (button, close) {
 	var url;
 	var f_node = five18.getEnclosingForm(button);
 	
-	if (!dijit.byNode(f_node).validate()) {
+	if ((dijit.byNode(f_node)) && (!dijit.byNode(f_node).validate())) {
 		window.alert("Formuläret är inte korrekt ifyllt");
 	} else {
 		dijit.findWidgets(f_node).disabled = true;
