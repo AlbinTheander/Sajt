@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+  
+  <input type="hidden" name="unid" value="<%= @page.id %>" />
 
   <div class="field">
     <%= f.label :title %><br />
@@ -24,6 +26,12 @@
     <%= f.text_field :parent_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
-  </div>
+  <input type="submit" />
+    <button dojoType="dijit.form.Button" type="button">
+ Spara
+ <script type="dojo/method" event="onClick" args="evt">
+  five18.saveEditors(this);
+  five18.saveDocument(this, false);
+ </script>
+</button>  </div>
 <% end %>
