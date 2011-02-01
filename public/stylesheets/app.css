@@ -1,0 +1,145 @@
+body, textarea {font: 12px Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;}
+
+#page {
+	background-color: rgb(173,115,88);
+}
+	
+.Tundra .header {
+	background-color: rgb(173,115,88);
+	border: none;
+}
+
+#dijit_layout_ContentPane_0_splitter {
+	background-color: rgb(173,115,88);
+}
+
+.appName {
+	float: right; 
+	font-size: 36px; 
+	margin: 7px 20px; 
+	font-family: helvetica; 
+	font-weight: bold;
+	color: #fff;
+}
+
+.icon {
+	float: left;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 15px;
+	padding-top: 12px;
+}
+
+.icon img {
+	height: 30px;
+}
+
+.icon a, .icon a:visited {
+	color: rgb(173,115,88);
+	background-color: rgb(173,115,88);
+	font-size: 11px;
+	text-decoration: none;
+	font-family: verdana;
+	padding-top: 4px;
+	opacity: 0.6;
+}
+
+.icon a:hover {
+	color: #bbb;
+	opacity: 1;
+}
+
+label {
+	display: block;
+	width: 150px;
+	float: left;
+	clear: both;
+	font-weight: bold;
+}
+
+.tundra .input518.RichTextEditable{
+		width: 507px !important;
+		height: 400px; !important;
+		margin-left: 150px;
+}
+
+.tundra .input518.dijitTextBox,
+.tundra .input518.dijitValidationTextBox,                                                      
+.tundra .input518.dijitSpinner,                 
+.input518.dijitTextBox.dijitTimeTextBox,
+.tundra .dijitTextArea.input518{
+        width:500px !important;
+}
+.tundra .input518.dijitTextBox.halfWidth {
+	width: 216px !important;
+}
+
+.tundra .input518.dijitCheckBox {
+		width: 15px !important;
+		padding: 0 !important;
+}
+
+.dojoxGrid .dojoxGridCell {
+		font-size: 12px;
+	}
+
+.center {
+	margin: 0 auto 10 auto;
+	text-align: center;
+}
+
+.Tundra .lightBlueBack {
+	background-color: #eee;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	box-shadow: 1px 1px 1px #BBBBBB;
+	-moz-box-shadow: 1px 1px 1px #BBBBBB;
+	-webkit-box-shadow: 1px 1px 1px #BBBBBB;
+}
+
+.hidden {
+	display: none;
+}
+
+.fieldContainer {
+	clear: both;
+	display: block;
+	float: left;
+	margin-top: 1em;
+	margin-left: 150px;
+}
+
+.fieldContainer label {
+	margin-left: -150px;
+}
+
+.fieldContainer span {
+	width: 150px;
+	display: block;
+	float: left;
+}
+
+.fieldContainer br {
+	clear: left;
+}
+
+#konstverkMain, #pagesMain {
+	border: none;
+	padding-left: 1px;
+}
+
+.thumb {max-height: 100px; float: left;}
+h2 {margin: 1em 0; }
+
+.checkboxContainer {
+}
+
+.checkboxContainer input {
+	float: left;
+}
+.checkboxContainer label {
+	clear: none;
+	float: left;
+	margin-left: 5px;
+	font-weight: normal;
+}
