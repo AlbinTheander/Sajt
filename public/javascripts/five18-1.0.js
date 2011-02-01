@@ -74,7 +74,7 @@ five18.forms = new FormsContainer();
 
 five18.editDocument = function (unid, editIn) {
 	dojo.xhrGet({
-		url: five18.dbpath + '0/' + unid + '?EditDocument',
+		url: five18.dbpath + 'pages/'+unid,
 		container: editIn,
 		handleAs: 'text',
 		load: function (data, xhr) {

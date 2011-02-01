@@ -1,8 +1,8 @@
 /*global dojo, dijit, five18.dbpath */
 
 app.onRowClick = function (e) {
-				var unid = e.grid.store.getValue(e.grid.getItem(e.rowIndex), "unid");
-				var title = e.grid.store.getValue(e.grid.getItem(e.rowIndex), "Title");
+				var unid = e.grid.store.getValue(e.grid.getItem(e.rowIndex), "id");
+				var title = e.grid.store.getValue(e.grid.getItem(e.rowIndex), "title");
 				five18.editDocumentInTab('center', title, unid, e.grid.store, five18.saveToStore, five18.deleteRefreshStore);
 }
 
@@ -31,8 +31,8 @@ app.onRowClick = function (e) {
 			clientSort: true,
 			structure: app.pagesLayout,
 			onRowClick: function (e) {
-				var unid = e.grid.store.getValue(e.grid.getItem(e.rowIndex), "unid");
-				var title = e.grid.store.getValue(e.grid.getItem(e.rowIndex), "Title");
+				var unid = e.grid.store.getValue(e.grid.getItem(e.rowIndex), "id");
+				var title = e.grid.store.getValue(e.grid.getItem(e.rowIndex), "title");
 				five18.editDocumentInTab('center', title, unid, e.grid.store, five18.saveToStore, five18.deleteFromStore);
 			}
 		}, document.createElement('div'));
