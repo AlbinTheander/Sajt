@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20110201085340) do
     t.string   "title"
     t.string   "body"
     t.integer  "parent_id"
+    t.string   "filename"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

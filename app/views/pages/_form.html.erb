@@ -1,4 +1,4 @@
-<%= form_for(@page) do |f| %>
+<%= form_for(@page, :html => {:multipart => true}) do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
@@ -25,13 +25,20 @@
     <%= f.label :parent_id %><br />
     <%= f.text_field :parent_id %>
   </div>
+  <div class="field">
+    <%= f.label :bild%><br />
+    <input type="file" name="file" />
+  </div>
+  Filename: <%= @page.filename %>
+
   <div class="actions">
   <input type="submit" />
     <button dojoType="dijit.form.Button" type="button">
- Spara
- <script type="dojo/method" event="onClick" args="evt">
-  five18.saveEditors(this);
-  five18.saveDocument(this, false);
- </script>
-</button>  </div>
+      Spara
+      <script type="dojo/method" event="onClick" args="evt">
+        five18.saveEditors(this);
+        five18.saveDocument(this, false);
+      </script>
+    </button>  
+  </div>
 <% end %>

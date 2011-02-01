@@ -59,9 +59,12 @@ class PagesController < ApplicationController
   # PUT /pages/1.xml
   def update
     @page = Page.find(params[:id])
-
+    newpage = params[:page]
+    file = params[:file]
+    newpage[:filename] = file.original_filename
+    Page.save(file)
     respond_to do |format|
-      if @page.update_attributes(params[:page])
+      if @page.update_attributes(newpage)
         format.html 
         format.xml  { head :ok }
       else
