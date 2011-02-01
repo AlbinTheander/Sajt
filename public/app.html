@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"> 
+<title>Admin av konstkompassen</title>
+<style type="text/css">
+	@import "http://ajax.googleapis.com/ajax/libs/dojo/1.5/dijit/themes/tundra/tundra.css";
+	@import "http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/resources/dojo.css";
+	@import "http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojox/grid/resources/tundraGrid.css";
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js" djConfig="isDebug: true, debugAtAllCosts: true, parseOnLoad: true, extraLocale: ['sv-sv', 'en-us']"></script> 
+<script type="text/javascript">
+	var five18 = {};
+	var app = {};
+	five18.dbpath = '/';
+	dojo.config.dojoBlankHtmlUrl = '/dojo/dojo/resources/blank.html';
+	dojo.require("dojo.parser");
+	dojo.require("dojo.fx");
+	dojo.require("dojo.date.locale");
+	dojo.require("dojo.io.iframe");
+	dojo.require("dojo.data.ItemFileWriteStore");
+	dojo.require("dojo.data.ItemFileReadStore");
+	dojo.require("dojox.grid.DataGrid" );
+	dojo.require("dijit.layout.BorderContainer");
+	dojo.require("dijit.layout.TabContainer");
+	dojo.require("dijit.layout.AccordionContainer");
+	dojo.require("dijit.layout.ContentPane");
+	dojo.require("dijit.form.Form");
+	dojo.require("dijit.form.Button");
+	dojo.require("dijit.form.ValidationTextBox");
+	dojo.require("dijit.form.TextBox");
+	dojo.require("dijit.form.Textarea");
+	dojo.require("dijit.form.CheckBox");
+	dojo.require("dijit.form.ComboBox");
+	dojo.require("dijit.Editor");
+	dojo.require("dijit.Dialog");
+</script>
+<script type="text/javascript" src="/javascripts/five18-1.0.js"></script>
+<script type="text/javascript" src="/javascripts/app.js"></script>
+<link rel="stylesheet" type="text/css" href="/<Computed Value>/okm.css?OpenCssResource">
+</head>
+<body text="#000000" bgcolor="#FFFFFF" class="tundra">
+<div dojoType="dijit.layout.BorderContainer" liveSplitters="true" style="width: 100%; height: 100%;" id="page">
+	<div dojoType="dijit.layout.ContentPane" region="top" class="header">
+		<div class="appName">Sajt</div>
+	</div>
+	<div id="center" dojoType="dijit.layout.TabContainer" splitter="true" region="center">
+		<div  id="pagesTab" dojoType="dijit.layout.ContentPane" title="pages" selected="true" class="domino_view" onShow="five18.controlTabsShowTab" onClose = "five18.controlTabsCloseTab">
+			<div dojoType="dijit.layout.BorderContainer" design="sidebar" liveSplitters="true" style="width: 100%; height: 100%;">
+				<div dojoType="dijit.layout.ContentPane" region="top" class="lightBlueBack" id="pagesBrowseBar">
+					<h2>
+						<div style="float:right;">
+							<button dojoType="dijit.form.Button" id="pagesClear">
+								Nytt sida
+								<script type="dojo/method" event="onClick" args="evt">
+									five18.openFormInTab('center', 'Nytt sida', 'item' , false, okm.pagesGrid.store, five18.saveToStore);
+								</script>
+							</button>
+						</div>
+						Sidor
+					</h2>
+				</div>
+				<div dojoType="dijit.layout.ContentPane" region="center" splitter="true" id="pagesMain">
+					<div style="height:95%;" id="pagesGrid"></div>
+			    	</div>
+		    	</div>
+	    	</div>
+	</div>
+</div>
+</body>
+</html>
