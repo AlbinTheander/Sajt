@@ -89,11 +89,7 @@ five18.saveDocument = function (button, close) {
 		window.alert("Formuläret är inte korrekt ifyllt");
 	} else {
 		dijit.findWidgets(f_node).disabled = true;
-		if (f_node.unid.value === '') {
-			url = f_node.action;
-		} else {
-			url = five18.dbpath + '0/' + f_node.unid.value + '?editdocument';
-		}
+		url = f_node.action;
 		dojo.io.iframe.send({
 			url: url,
 			close: close,
