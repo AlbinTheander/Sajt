@@ -11,7 +11,7 @@ app.onRowClick = function (e) {
 	---------------------------------------------------------------------*/
 	app.pagesGridLoader = function () {
 		app.pagesStore = new dojo.data.ItemFileWriteStore({
-			url: five18.dbpath + "/pages.js",
+			url: five18.dbpath + "pages.js",
 			clearOnClose: true
 		});
 
